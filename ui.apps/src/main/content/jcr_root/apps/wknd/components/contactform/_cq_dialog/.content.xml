@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="Contact Form"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                    maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <general
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="General"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <firstName
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="FirstName"
+                                    name="./firstName"
+                                    value="{String}il Tuo Nome"
+                                    emptyText="Show placeholder text when input field is empty."
+                                    disabled="{Boolean}false"
+                                    required="{Boolean}true"
+                                    autocomplete="off"
+                                    autofocus="{Boolean}true"
+                                    validation=""
+                                    maxlength="{Long}50"/>
+                            <lastName
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="LastName"
+                                    name="./lastName"
+                                    value="{String}il Tuo Cognome"
+                                    emptyText="Show placeholder text when input field is empty."
+                                    disabled="{Boolean}false"
+                                    required="{Boolean}true"
+                                    autocomplete="off"
+                                    autofocus="{Boolean}true"
+                                    validation=""
+                                    maxlength="{Long}50"/>
+                            <email
+                                    jcr:primaryType="nt:unstructured"
+                                    fieldLabel="Email"
+                                    name="./email"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    value="{String}la tua email"
+                                    emptyText="Show placeholder text when input field is empty."
+                                    disabled="{Boolean}false"
+                                    required="{Boolean}true"
+                                    autocomplete="off"
+                                    autofocus="{Boolean}true"
+                                    validation=""
+                                    maxlength="{Long}50"/>
+                            <country
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+                                    name="./countryConfig"
+                                    fieldLabel="Country Configuration">
+
+                                <items jcr:primaryType="nt:unstructured">
+                                    <countryLabel
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                            fieldLabel="Country"
+                                            name="./countryLabel">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <usa
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="USA"
+                                                    value="USA"/>
+                                            <italia
+                                                    jcr:primaryType="nt:unstructured"
+                                                    text="Italia"
+                                                    value="Italia"/>
+                                        </items>
+                                    </countryLabel>
+                                </items>
+
+                            </country>
+                            <subject
+                                    jcr:primaryType="nt:unstructured"
+                                    fieldLabel="Subject"
+                                    name="./subject"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    value="{String}subject"
+                                    emptyText="Show placeholder text when input field is empty."
+                                    disabled="{Boolean}false"
+                                    required="{Boolean}true"
+                                    autocomplete="off"
+                                    autofocus="{Boolean}true"
+                                    validation=""
+                                    maxlength="{Long}50"/>
+                            <placeholders
+                                    jcr:primaryType="nt:unstructured"
+                                    fieldLabel="Placeholders"
+                                    name="./placeholders"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    value=""
+                                    emptyText="Show placeholder text when input field is empty."
+                                    disabled="{Boolean}false"
+                                    required="{Boolean}true"
+                                    autocomplete="off"
+                                    autofocus="{Boolean}true"
+                                    validation=""
+                                    maxlength="{Long}50"/>
+                            <submit
+                                    jcr:primaryType="nt:unstructured"
+                                    fieldLabel="Submit"
+                                    name="./submit"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    value=""
+                                    emptyText="Show placeholder text when input field is empty."
+                                    disabled="{Boolean}false"
+                                    required="{Boolean}true"
+                                    autocomplete="off"
+                                    autofocus="{Boolean}true"
+                                    validation=""
+                                    maxlength="{Long}50"/>
+                        </items>
+                    </general>
+                    <confirm
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Confirm"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <title
+                                    jcr:primaryType="nt:unstructured"
+                                    fieldLabel="Title"
+                                    name="./title"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textarea"/>
+                            <description
+                                    jcr:primaryType="nt:unstructured"
+                                    fieldLabel="Description"
+                                    name="./description"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/richtext"/>
+                            <ctaLabel
+                                    jcr:primaryType="nt:unstructured"
+                                    fieldLabel="CTA Label"
+                                    name="./ctaLabel"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textarea"/>
+                            <ctaLink
+                                    jcr:primaryType="nt:unstructured"
+                                    fieldLabel="CTA Link"
+                                    name="./ctaLink"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"/>
+                        </items>
+                    </confirm>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

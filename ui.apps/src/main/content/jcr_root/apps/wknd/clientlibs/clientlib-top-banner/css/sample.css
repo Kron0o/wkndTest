@@ -1,0 +1,41 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.top-banner {
+    border-radius: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+    background-color: #2b72e3;
+}
+
+.top-banner a, .top-banner span {
+    display: inline-block;
+}
+
+.top-banner a {
+    padding: 15px 0;
+    text-decoration: none;
+    color: #fff;
+}
+
+.top-banner span{
+    width: 125%;
+    heigth: 28px;
+    line-height: 28px;
+    background-color: #00ff00;
+    border-radius: 20px;
+}
+
+.top-banner a:hover {
+    color: #fff9e0;
+}

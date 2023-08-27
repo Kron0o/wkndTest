@@ -21,6 +21,83 @@
     </div>
     <div class="cmp-helloworld__item" data-sly-use.model="com.adobe.aem.guides.wknd.core.models.HelloWorldModel" data-sly-test="${model.message}">
         <p class="cmp-helloworld__item-label">Model message:</p>
-        <pre class="cmp-helloworld__item-output"data-cmp-hook-helloworld="model">${model.message}</pre>
+        <pre class="cmp-helloworld__item-output" data-cmp-hook-helloworld="model">${model.message}</pre>
     </div>
+    <div>
+        <h3>Esercizio 2 </h3>
+        <sly data-sly-set.myFunctionName="myFunction"></sly>
+        <sly data-sly-set.colorName="red"></sly>
+        <a style="color: ${colorName @ context='styleToken'}" onclick="${myFunctionName @ context='scriptToken'}()" >Click here</a>
+
+    </div>
+    <div>
+        <h2>Esercizio 3</h2>
+        <p>${pageProperties.jcr:title}</p>
+        <p>${currentPage.name}</p>
+        <p>${resource.name}</p>
+        <p>${resource.path}</p>
+    </div>
+    <div>
+        <h2>Esercizio 4</h2>
+        <p>jcr:created date is ${'yyyy-MM-dd'@format=properties.jcr:created } created by ${properties.jcr:createdBy}</p>
+        <p>jcr:lastModified date is ${'yyyy-MM-dd HH-mm' @format=properties.jcr:lastModified} modified by ${properties.jcr:lastModifiedBy}</p>
+    </div>
+    <div>
+        <h2>Esercizio 5</h2>
+        <p>${'Add Details' @ i18n, locale='it'}</p>
+        <p data-sly-element="${'h3'}">This is Header 3</p>
+    </div>
+    <div>
+        <h2>Esercizio 6</h2>
+        <div>
+            <sly data-sly-test="${wcmmode.edit}">
+                <p>In Edit Mode</p>
+            </sly>
+        </div>
+        <div>
+            <sly data-sly-test="${!wcmmode.edit}">
+                <p>Non In Edit Mode</p>
+            </sly>
+        </div>
+        <div>
+            <ul>
+                <sly data-sly-list.child="${currentPage.listChildren}">
+                    <li><a href="${child.path}">${child.title}</a></li>
+                </sly>
+            </ul>
+        </div>
+    </div>
+    <div>
+        <h2>Esercizio 7</h2>
+        <sly data-sly-test="${wcmmode.edit}">
+            <div  data-sly-resource="${'parsys' @ resourceType='wcm/foundation/components/parsys'}"></div>
+        </sly>
+        <sly data-sly-test="${wcmmode.disabled}">
+            <div data-sly-resource="${'/apps/wknd/components/title' @ resourceType='wknd/components/title'}"></div>
+        </sly>
+    </div>
+    <template data-sly-template.one="${@ text,res}">
+
+        <div data-sly-unwrap="${wcmmode.disabled}">
+            <p data-sly-test.combinedResource="${[text,res.name] @ join=' name is: '}">${combinedResource}</p>
+            <p data-sly-test.formattato="${'{0} path is:  {1}' @ format=[text, res.path]}">${formattato}</p>
+        </div>
+    </template>
+    <div>
+        <h2>Esercizio 8</h2>
+        <sly data-sly-call="${one @ text='the resource', res=resource}"></sly>
+    </div>
+    <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+        <sly data-sly-call="${clientlib.all @ categories='wknd.myfirstcomponentclientlib'}"/>
+            <div class="custom-component">
+                <button onclick="${myFunctionName @ context='scriptToken'}()">ciao</button>
+            </div>
+    </sly>
+
+    <sly data-sly-set.changeColorBody="changeColor"></sly>
+    <div class="custom-page" onclick="${changeColorBody @ context='scriptToken'}()" >IMMAGINE BACKGROUND</div>
+
+    <sly data-sly-set.changeColorBody2="changeColor2"></sly>
+    <div class="page2" onclick="${changeColorBody2 @ context='scriptToken'}()" >IMMAGINE BACKGROUND</div>
 </div>
+

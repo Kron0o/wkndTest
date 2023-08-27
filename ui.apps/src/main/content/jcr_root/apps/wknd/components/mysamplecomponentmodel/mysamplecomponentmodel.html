@@ -1,0 +1,16 @@
+<sly data-sly-use.model="com.adobe.aem.guides.wknd.core.models.MySampleModel"></sly>
+
+<sly data-sly-set.title="${model.title}"></sly>
+<sly data-sly-set.description="${model.description}"></sly>
+<sly data-sly-set.isConfigured="${(title && description)}"></sly>
+<sly data-sly-set.imagePath="${model.fileReferenceDialog}"></sly>
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+     data-sly-call="${template.placeholder @ isEmpty=!isConfigured,
+     classAppend='my-placeholder',emptyTextAppend='Please configure!'}">
+</sly>
+
+<div data-sly-test="${isConfigured}" class="my-sample-component">
+    <h2>${title}</h2>
+    <p>${description}</p>
+    <img src="${imagePath}" alt="image" width="30%">
+</div>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0"
+          xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="nt:unstructured"
+          jcr:title="My Sample Component"
+          sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                    maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <general
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="General"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <title
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Title"
+                                    name="./title"
+                                    value="{String}Default Title"
+                                    emptyText="Show placeholder text when input field is empty."
+                                    disabled="{Boolean}false"
+                                    required="{Boolean}true"
+                                    autocomplete="off"
+                                    autofocus="{Boolean}true"
+                                    validation=""
+                                    maxlength="{Long}50">
+                            </title>
+                            <description
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                    fieldLabel="Description"
+                                    name="./description"
+                                    value="{String}Default Description"
+                                    emptyText="Show placeholder text when input field is empty."
+                                    disabled="{Boolean}false"
+                                    required="{Boolean}true"
+                                    autocomplete="off"
+                                    autofocus="{Boolean}true"
+                                    validation=""
+                                    row="5"
+                                    cols="5"
+                                    maxlength="{Long}100">
+                            </description>
+                            <occupations
+                                    jcr:primaryType="nt:unstructured"
+                                    fieldLabel="Occupations"
+                                    fieldDescription="A list of the contributor's occupations."
+                                    required="{Boolean}false"
+                                    composite="{Boolean}true"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/multifield">
+                                <field
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+                                        name="./occupations">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <occupation
+                                                jcr:primaryType="nt:unstructured"
+                                                name="./occupation"
+                                                emptyText="Enter an occupation"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"/>
+                                    </items>
+                                </field>
+                            </occupations>
+                        </items>
+                    </general>
+                    <asset
+                            jcr:primaryType="nt:unstructured"
+                            jcr:title="Asset"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <file
+                                    granite:class="cmp-image__editor-file-upload"
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                                    class="cq-droptarget"
+                                    enableNextGenDynamicMedia="{Boolean}true"
+                                    fileNameParameter="./fileName"
+                                    fileReferenceParameter="./fileReferenceDialog"
+                                    mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                                    name="./file"/>
+                        </items>
+                    </asset>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>
+

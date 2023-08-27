@@ -1,0 +1,13 @@
+<sly data-sly-set.title="${properties.title}"></sly>
+<sly data-sly-set.description="${properties.description}"></sly>
+<sly data-sly-set.isConfigured="${(title && description)}"></sly>
+<sly data-sly-set.imagePath="${properties.fileReferenceDialog}"></sly>
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+     data-sly-call="${template.placeholder @ isEmpty=!isConfigured,
+     classAppend='my-placeholder',emptyTextAppend='Please configure!'}">
+</sly>
+<div data-sly-test="${isConfigured}">
+    <h2>${title}</h2>
+    ${description @ context="html"}
+    <img src="${imagePath}" alt="image" width="30%">
+</div>
