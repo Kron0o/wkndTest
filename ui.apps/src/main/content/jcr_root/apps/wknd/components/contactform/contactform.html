@@ -1,10 +1,14 @@
+
 <div class="container">
-    <form action="action_page">
+    <form>
         <label for="fname">Nome</label>
         <input type="text" id="fname" name="firstName" placeholder="Mario" value="${properties.firstName}">
 
         <label for="lname">Cognome</label>
         <input type="text" id="lname" name="lastName" placeholder="Rossi" value="${properties.lastName}">
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="example@gmail.com" value="${properties.email}">
 
         <label for="country">Country</label>
         <select id="country" name="country">
@@ -20,10 +24,10 @@
         <label for="subject">Subject</label>
         <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px">${properties.subject}</textarea>
 
-        <input type="submit" value="Submit">
+        <input id="submitButton" type="button" value="Submit">
     </form>
 </div>
 
 <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"></sly>
 
-<sly data-sly-call="${clientlib.css @ categories='wknd.contactform'}"></sly>
+<sly data-sly-call="${clientlib.all @ categories='wknd.contactform'}"></sly>

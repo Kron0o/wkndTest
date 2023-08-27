@@ -1,4 +1,4 @@
-input[type=text], select, textarea {
+input[type=text], input[type=email], select, textarea {
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -9,7 +9,7 @@ input[type=text], select, textarea {
   resize: vertical
 }
 
-input[type=submit] {
+input[type=button] {
   background-color: #04AA6D;
   color: white;
   padding: 12px 20px;
@@ -19,7 +19,7 @@ input[type=submit] {
 }
 
 
-input[type=submit]:hover {
+input[type=button]:hover {
   background-color: #45a049;
 }
 
