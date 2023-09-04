@@ -1,0 +1,25 @@
+<h1 class="page_title">CSS Image Grid with Hover</h1>
+<sly data-sly-use.model="com.adobe.aem.guides.wknd.core.models.ImageGridModel"></sly>
+
+
+
+<div class="row">
+    <div class="container">
+        <div class="test_box box-01 col-xs-6 col-md-4" data-sly-use.dataMap="${model.getData}"
+             style="background-image:${dataMap.imagePath @ context='styleToken'} "
+             data-sly-repeat="${currentPage.listChildren}">
+            <div class="inner">
+                <a href="${dataMap.name}" class="test_click">
+                    <div class="flex_this">
+                        <h1 class="test_title">${dataMap.title}</h1>
+                        <span class="test_link">${properties.label}</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"></sly>
+
+<sly data-sly-call="${clientlib.css @ categories='wknd.imagegridclientlib'}"></sly>

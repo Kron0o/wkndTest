@@ -7,7 +7,7 @@ import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.ScriptVariable;
 
 import javax.annotation.PostConstruct;
-import javax.inject.Inject;
+
 
 @Model(adaptables = { SlingHttpServletRequest.class, Resource.class })
 public class MyHeaderModel {
