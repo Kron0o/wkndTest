@@ -3,6 +3,7 @@ package com.adobe.aem.guides.wknd.core.servlet;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
+import org.apache.sling.api.servlets.HttpConstants;
 import org.apache.sling.api.servlets.SlingAllMethodsServlet;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -14,13 +15,8 @@ import javax.servlet.Servlet;
 import java.io.IOException;
 import java.util.regex.Pattern;
 
-@Component(
-        service = { Servlet.class },
-        property = {
-                "sling.servlet.methods=POST",
-                "sling.servlet.paths=/bin/validation"
-        }
-)
+@Component(service= {Servlet.class}, property = {"sling.servlet.methods="+ HttpConstants.METHOD_POST,"sling.servlet.extensions=json",
+        "sling.servlet.selectors=servletContactForm", "sling.servlet.resourceTypes=sling/servlet/default"})
 public class ServletContactForm extends SlingAllMethodsServlet {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ServletContactForm.class);

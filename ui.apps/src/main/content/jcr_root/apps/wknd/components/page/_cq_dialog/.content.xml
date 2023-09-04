@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <content jcr:primaryType="nt:unstructured">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs jcr:primaryType="nt:unstructured">
+                <items jcr:primaryType="nt:unstructured">
+                    <wknd
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="WKND"
+                        sling:orderBefore="basic"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <top-banner-header
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/fieldset"
+                                        jcr:title="TOP Banner"/>
+                                    <topBannerDescription
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textarea"
+                                            fieldLabel="Description"
+                                            name="./topBannerDescription"
+                                            emptyText="nessuna proprietà configurata"
+                                            disabled="{Boolean}false"
+                                            autocomplete="off"
+                                            autofocus="{Boolean}true"
+                                            validation=""
+                                            row="5"
+                                            cols="5"
+                                            maxlength="{Long}100">
+                                    </topBannerDescription>
+                                    <topBannerCtalabel
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                            fieldLabel="Label"
+                                            name="./topBannerLabel"
+                                            emptyText="nessuna proprietà configurata"
+                                            disabled="{Boolean}false"
+                                            autocomplete="off"
+                                            autofocus="{Boolean}true"
+                                            validation=""
+                                            maxlength="{Long}50">
+                                    </topBannerCtalabel>
+                                    <topBannerCtalink
+                                            jcr:primaryType="nt:unstructured"
+                                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                                            fieldLabel="Link"
+                                            name="./topBannerLink"
+                                            emptyText="nessuna proprietà configurata"
+                                            disabled="{Boolean}false"
+                                            autocomplete="off"
+                                            autofocus="{Boolean}true"
+                                            validation="">
+                                    </topBannerCtalink>
+                                </items>
+                            </column>
+                        </items>
+                    </wknd>
+                    <basic
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Basic"
+                        sling:orderBefore="advanced"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <tagLine
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:orderBefore="htmlid"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                        emptyText="Enter a short, but sweet, tag line for this page"
+                                        fieldLabel="Tag line"
+                                        name="./tagLine"/>
+                                </items>
+                            </column>
+                        </items>
+                    </basic>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

@@ -11,6 +11,15 @@ html {
     padding: 0;
 }
 
+.container-top-banner {
+    height: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
 .top-banner {
     border-radius: 10px;
     margin-bottom: 30px;

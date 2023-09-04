@@ -26,7 +26,6 @@
                                     name="./description"
                                     emptyText="nessuna proprietà configurata"
                                     disabled="{Boolean}false"
-                                    required="{Boolean}true"
                                     autocomplete="off"
                                     autofocus="{Boolean}true"
                                     validation=""
@@ -41,7 +40,6 @@
                                     name="./label"
                                     emptyText="nessuna proprietà configurata"
                                     disabled="{Boolean}false"
-                                    required="{Boolean}true"
                                     autocomplete="off"
                                     autofocus="{Boolean}true"
                                     validation=""
@@ -54,7 +52,6 @@
                                     name="./link"
                                     emptyText="nessuna proprietà configurata"
                                     disabled="{Boolean}false"
-                                    required="{Boolean}true"
                                     autocomplete="off"
                                     autofocus="{Boolean}true"
                                     validation="">

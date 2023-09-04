@@ -9,12 +9,11 @@
             jcr:primaryType="nt:unstructured"
             sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
             fieldLabel="Contenuto Multifield"
-            name="./content">
+            composite="{Boolean}true">
         <field
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="granite/ui/components/coral/foundation/container"
-                name="./field"
-                multiple="true">
+                name="./field">
             <items jcr:primaryType="nt:unstructured">
                 <colorSelect
                         jcr:primaryType="nt:unstructured"
@@ -31,19 +30,18 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/select"
                         fieldLabel="Icona"
-                        name="./iconSelect"
-                        options="[Facebook, Instagram]"/>
-                <fontAwesomeCss
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/coral/foundation/include"
-                        cssPath="apps/wknd/clientlibs/clientlib-vendors/css/fontawesome.min.css"/>
-                <iconPreview
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="granite/ui/components/coral/foundation/form/icon"
-                        name="./iconPreview"
-                        fieldLabel="Anteprima Icona"
-                        text="${properties.iconSelect}"
-                        cssClasses="fa ${properties.iconSelect}"/>
+                        name="./iconSelect">
+                    <items jcr:primaryType="nt:unstructured">
+                        <Facebook jcr:primaryType="nt:unstructured"
+                                text="Facebook"
+                                value="fa-facebook-f">
+                        </Facebook>
+                        <twitter jcr:primaryType="nt:unstructured"
+                                text="Twitter"
+                                value="fa-twitter">
+                        </twitter>
+                    </items>
+                </iconSelect>
             </items>
         </field>
     </content>

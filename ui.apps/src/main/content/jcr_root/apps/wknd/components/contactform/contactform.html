@@ -1,6 +1,6 @@
 
 <div class="container">
-    <form>
+    <form action="${currentPage.path @selectors='servletContactForm.json'}" method="POST">
         <label for="fname">Nome</label>
         <input type="text" id="fname" name="firstName" placeholder="Mario" value="${properties.firstName}">
 
